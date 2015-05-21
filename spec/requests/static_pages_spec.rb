@@ -3,10 +3,16 @@ require 'spec_helper'
 describe "Static pages" do
    let(:base_title) { "Ruby on Rails Tutorial Sample App" }
   describe "Home page" do
-
     it "should have the title 'Sample App'" do
       visit '/static_pages/home'
-      expect(page).to have_title('Sample App')
+      expect(page).to have_title("Ruby on Rails Tutorial Sample App")
+    end
+  end
+
+  describe "Should not have a custom page title" do
+    it "should have the title 'Sample App'" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title("| Home")
     end
   end
 
