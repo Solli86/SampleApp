@@ -7,20 +7,22 @@ gem 'rails', '4.0.2'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec'
-  gem 'guard', '2.12.5'
-  gem 'guard-rspec', '4.5.0'
-  gem 'rspec-rails', '~> 3.0'
-  gem 'spork-rails' 
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'spork-rails'
   gem 'guard-spork'
+  gem 'rspec-rails'
   gem 'childprocess'
 end
 group :test do
-  gem 'capybara', '~>2.2.0'
+  gem 'capybara'
   gem 'selenium-webdriver', '2.35.1'
   gem 'libnotify', '0.8.0'
 end
 
-gem 'sass-rails', '4.0.1'
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'sass-rails', '>= 3.2'
+gem 'sprockets'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.0.4'

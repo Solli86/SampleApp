@@ -33,4 +33,6 @@ SampleApp::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  #In Rails 4.0/4.1 the default test environment (config/environments/test.rb) is not threadsafe
+  config.allow_concurrency = false
 end
