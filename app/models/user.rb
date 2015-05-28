@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_save { self.email = email.downcase }
   #name validation
   validates(
     :name,    
@@ -13,4 +14,7 @@ class User < ActiveRecord::Base
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
   )
+  #passwors section
+  validates :password, length: { minimum: 6 }
+  has_secure_password
 end
