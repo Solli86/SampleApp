@@ -9,7 +9,7 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:authenticate) }
   it {should be_valid }
-
+  # name column spec
   describe "When name is not present" do
     before { @user.name = " " }
     it { should_not be_valid }
@@ -18,6 +18,7 @@ describe User do
     before { @user.name = "a" * 51 }
     it { should_not be_valid }
   end
+  #email column spec
   describe "when email is not present" do
     before { @user.email = " " }
     it { should_not be_valid }
@@ -30,6 +31,15 @@ describe User do
     end
     it { should_not be_valid }
   end
+  describe "email adress is mixed case" do
+    let(:mixed_case_email) { "FooBAe@ya.er" }
+    it 'should saved as lower case' do
+      @user.email = mixed_case_email
+      @user.save
+      expect(@user.reload.email).to eq  mixed_case_email.downcase
+    end
+  end
+
   #Password validation
   describe "when password is not present" do
     before do
@@ -54,7 +64,7 @@ describe User do
       let(:user_for_invalid_password) { found_user.authenticate("invalid") }
 
       it { should_not eq user_for_invalid_password }
-      specify { expect(user_for_invalid_password).to eq false }
+      specify { expect(user_for_invalid_password).to be false }
     end
     describe "with a password that's too short" do
       before { @user.password = @user.password_confirmation = "a" * 5 }
