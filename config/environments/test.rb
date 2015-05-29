@@ -35,4 +35,5 @@ SampleApp::Application.configure do
   config.active_support.deprecation = :stderr
   #In Rails 4.0/4.1 the default test environment (config/environments/test.rb) is not threadsafe
   config.allow_concurrency = false
+  ActiveModel::SecurePassword.min_cost = true
 end
