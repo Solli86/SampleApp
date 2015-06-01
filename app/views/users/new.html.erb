@@ -1,7 +1,34 @@
 <% provide(:title, 'Sign Up') %>
-<div class="center jumbotron">
-  <h1>Sign up</h1>
-  <p>Find me in app/views/users/new.html.erb</p>
-</div>
-
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+       <h1 class="center" >Sign up</h1>
+      <%= form_for(@user) do |f|  %>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+          </span>
+          <%= f.text_field :name, class: "form-control center", placeholder: :name %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-envelope"></span>
+          </span> 
+          <%= f.text_field :email, class: "form-control center", placeholder: :email %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-lock"></span> 
+          </span> 
+          <%= f.password_field :password, class: "form-control center", placeholder: :password %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-lock"></span> 
+          </span> 
+          <%= f.password_field :password_confirmation, class: "form-control center", placeholder: "confirm the password" %>
+        </div>
+        <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
