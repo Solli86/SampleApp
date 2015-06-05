@@ -25,5 +25,9 @@ describe "Authentication" do
       it { should have_link('Sign out',     href: signout_path) }
       it { should_not have_link('Sign in',  href: signin_path) }
     end
+    describe "visit another page" do
+      before { click_link "Home"}
+      it { should_not have_selector(".alert-danger")}
+    end
   end
 end
