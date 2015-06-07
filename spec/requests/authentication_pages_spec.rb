@@ -17,7 +17,7 @@ describe "Authentication" do
       before do
         fill_in "email",    with:  user.email.upcase
         fill_in "password", with: user.password
-        click_button "Sign_in"
+        click_button "Sign in"
       end
 
       it { should have_title(user.name) }

@@ -71,5 +71,10 @@ describe User do
       before { @user.password = @user.password_confirmation = "a" * 5 }
       it { should be_invalid }
     end
+    # token validate
+    describe "remember token" do
+      before { @user.save }
+      it { expect(@user.remember_token).not_to be_blank }
+    end
   end
 end
