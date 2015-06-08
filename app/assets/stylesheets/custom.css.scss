@@ -1,4 +1,4 @@
-@import "bootstrap-sprockets";
+@import 'bootstrap-sprockets';
 @import 'bootstrap';
 /* mixins */
 @mixin box_sizing{
@@ -27,6 +27,17 @@ $trace_border_color: #c9c9c9;
 }
 .nav > li > a:hover, .nav > li > a:focus{
     background:$trace_background;
+}
+/* dropdown menu */
+.header-menu_btn{
+  height: 40px;
+}
+.dropup, .dropdown{
+  float: left;
+}
+.open > .dropdown-menu{
+  right: 0px;
+  left: auto;
 }
 #logo {
   float: left;
