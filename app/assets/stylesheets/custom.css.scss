@@ -49,23 +49,23 @@ header {
       }
     }
   }
+  .navbar-inverse {
+    background-color: #222;
+    border-color: #f4f4f4;
+  }
+
 
 }  
-.navbar-inverse {
-  background-color: #222;
-  border-color: #f4f4f4;
-}
-
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #444;
+  color: #f0f0f0;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-  line-height: 1;
+  line-height: 1,8;
   &:hover{
     color:#725;
     text-decoration: none;
