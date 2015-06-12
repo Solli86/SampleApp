@@ -1,0 +1,27 @@
+      <%= form_for(@user) do |f|  %>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+          </span>
+          <%= f.text_field :name, class: "form-control center", placeholder: :name %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-envelope"></span>
+          </span> 
+          <%= f.text_field :email, class: "form-control center", placeholder: :email %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-lock"></span> 
+          </span> 
+          <%= f.password_field :password, class: "form-control center", placeholder: :password %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-lock"></span> 
+          </span> 
+          <%= f.password_field :password_confirmation, class: "form-control center", placeholder: "confirm the password" %>
+        </div>
+        <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <% end %>
