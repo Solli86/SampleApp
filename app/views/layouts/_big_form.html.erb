@@ -23,5 +23,5 @@
           </span> 
           <%= f.password_field :password_confirmation, class: "form-control center", placeholder: "confirm the password" %>
         </div>
-        <%= f.submit "Create my account", class: "btn btn-primary" %>
+        <%= f.submit yield(:submit_button_text), class: "btn btn-primary" %>
       <% end %>
