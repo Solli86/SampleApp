@@ -12,6 +12,8 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rspec-rails'
   gem 'childprocess'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 group :test do
   gem 'capybara'

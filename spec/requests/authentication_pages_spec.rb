@@ -14,11 +14,8 @@ describe "Authentication" do
     end
     describe "with valid sign in" do
       let(:user) { FactoryGirl.create(:user) }
-      before do
-        fill_in "email",    with:  user.email.upcase
-        fill_in "password", with: user.password
-        click_button "Sign in"
-      end
+      
+      before { valid_signin(user) }
 
       it { should have_title(user.name) }
       it { should have_link('Profile',      href: user_path(user)) }
