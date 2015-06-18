@@ -10,8 +10,6 @@ group :development, :test do
   gem 'rspec'
   gem 'guard'
   gem 'guard-rspec'
-  gem 'spork-rails'
-  gem 'guard-spork'
   gem 'rspec-rails'
   gem 'childprocess'
 end
