@@ -61,16 +61,16 @@ describe "User page" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "name",             with: new_name
-        fill_in "email",            with: new_email
-        fill_in "password",         with: user.password
-        fill_in "confirm the password", with: user.password
+        fill_in "name",                 with: new_name
+        fill_in "email",                with: new_email
+        fill_in "password",             with: user.password
+        fill_in "confirm the password", with: user.password_confirmation
         click_button "Save changes"
       end
 
       it { should have_title(new_name) }
-      it { should have_selector('div.alert.alert-success') }
-      it { should have_link('Sign out', href: signout_path) }
+      it { should have_selector('div.alert.alert-success', text: "Profile updated") }
+      #it { should have_link('Sign out', href: signout_path) }
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
