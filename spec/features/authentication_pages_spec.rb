@@ -32,4 +32,22 @@ describe "Authentication" do
       it { should_not have_error_message('Invalid') }
     end
   end
+  describe "autorization" , type: :request do
+    describe "non signed up user" do
+      let(:user) { FactoryGirl.create(:user) }
+
+      describe "AuthenticationPages" do
+
+        describe "visiting the edit page" do
+          before { visit edit_user_path(user) }
+          it { should have_title('Sign in') }
+        end
+        
+        describe "submitting to the update action" do
+          before { patch user_path(user) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+      end
+    end
+  end
 end
