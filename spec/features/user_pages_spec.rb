@@ -34,14 +34,14 @@ describe "User page" do
           it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
       end
-        describe "after saving the user" do
-          before { click_button submit } 
-          let(:user) { User.find_by(email: 'user@example.com') }
+      describe "after saving the user" do
+        before { click_button submit } 
+        let(:user) { User.find_by(email: 'user@example.com') }
 
-          it { should have_link("Sign out") }
-          it { should have_title(user.name) }
-          it { should have_selector('.alert-success', text: 'Welcome') }
-        end
+        it { should have_link("Sign out") }
+        it { should have_title(user.name) }
+        it { should have_selector('.alert-success', text: 'Welcome') }
+      end
     end
   end
   describe "edit" do
@@ -70,7 +70,7 @@ describe "User page" do
 
       it { should have_title(new_name) }
       it { should have_selector('div.alert.alert-success', text: "Profile updated") }
-      #it { should have_link('Sign out', href: signout_path) }
+      it { should have_link('Sign out', href: signout_path) }
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
