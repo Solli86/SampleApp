@@ -37,6 +37,7 @@ class UsersController < ApplicationController
   end
 
   def signed_in_user
+    store_location
     unless signed_in?
       flash[:warning] = "Please sign in."
       redirect_to signin_path
