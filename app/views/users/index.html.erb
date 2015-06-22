@@ -4,14 +4,7 @@
 
     <h1 class="text-center" >All users</h1>
     <ul class="users-list">
-    <% @users.each do |user| %>
-      <li class="user-item" >
-        <%= gravatar_for user, size: 160  %>
-        <% #TODO use block version link_to %>
-        <span class="user-link"><%= link_to user.name, user %></span>
-      </li>
-    <% end %>
-
+    <%= render @users %>
     </ul>
     </div>
 </div>
@@ -21,7 +14,7 @@
     <%= will_paginate %>
     </div>
     <div class="paginate-info_total">
-    <%= page_entries_info %>
+      <%= page_entries_info @users %>
     </div>
   </div>
 </div>
