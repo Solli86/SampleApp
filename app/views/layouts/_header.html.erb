@@ -9,6 +9,7 @@
               <li role="presentation" class="active"><%= link_to "Home",      root_path  %></li>
               <li role="presentation"><%= link_to "Help",      help_path  %></li>
               <% if signed_in? %>
+                <li role="presentation"><%= link_to "Users", users_path %></li>
                 <div class="dropdown">
                   <button class="btn btn-default dropdown-toggle header-menu_btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
                     Account<span class="caret"></span>
