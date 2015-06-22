@@ -5,12 +5,24 @@
     <h1 class="text-center" >All users</h1>
     <ul class="users-list">
     <% @users.each do |user| %>
-      <li>
+      <li class="user-item" >
         <%= gravatar_for user, size: 160  %>
         <% #TODO use block version link_to %>
         <span class="user-link"><%= link_to user.name, user %></span>
       </li>
     <% end %>
+
     </ul>
     </div>
 </div>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12">
+    <div class="paginate-info">
+    <%= will_paginate %>
+    </div>
+    <div class="paginate-info_total">
+    <%= page_entries_info %>
+    </div>
+  </div>
+</div>
+

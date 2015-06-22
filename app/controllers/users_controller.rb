@@ -15,7 +15,11 @@ class UsersController < ApplicationController
     end
   end
   def index
-    @users = User.all
+    #@users = User.all
+    @users = User.paginate(page: params[:page])
+    User.paginate(page: params[:page], :per_page => 3)
+
+
   end
   def edit
     @user = User.find(params[:id])
