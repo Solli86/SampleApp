@@ -1,6 +1,9 @@
 <li class="user-item" >
   <%= gravatar_for user, size: 160  %>
-  <% #TODO use block version link_to %>
   <span class="user-link"><%= link_to user.name, user %></span> 
+  <% #TODO use block version link_to %>
+   <% if current_user.admin? && !current_user?(user)  %>
+   <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?"} %>
+   <% end %>
 </li>
 
