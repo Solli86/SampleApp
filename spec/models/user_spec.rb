@@ -2,13 +2,13 @@ require 'spec_helper'
 describe User do
   before  { @user = User.new( name: "Solli_86", email: "solli@mix.up", password: "foobar", password_confirmation: "foobar") }
   subject { @user }
-  it { should respond_to(:name)  }
-  it { should respond_to(:email) }
-  it { should respond_to(:password_digest) }
-  it { should respond_to(:password) }
-  it { should respond_to(:remember_token) }
-  it { should respond_to(:password_confirmation) }
-  it { should respond_to(:authenticate) }
+  it {       should   respond_to(:name)                  }
+  it {       should   respond_to(:email)                 }
+  it {       should   respond_to(:password_digest)       }
+  it {       should   respond_to(:password)              }
+  it {       should   respond_to(:remember_token)        }
+  it {       should   respond_to(:password_confirmation) }
+  it {       should   respond_to(:authenticate)          }
   it {should be_valid }
   # name column spec
   describe "When name is not present" do

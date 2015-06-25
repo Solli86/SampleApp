@@ -12,6 +12,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'rspec-rails'
+  gem 'rspec-its'
   gem 'childprocess'
   gem 'spring'
   gem 'spring-commands-rspec'
