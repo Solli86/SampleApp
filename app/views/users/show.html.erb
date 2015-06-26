@@ -9,4 +9,15 @@
   <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
     <%= @user.name %> <%= @user.email %>
   </div>
+  <div class="col-lg-4">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count  %>)</h3>
+      <ol class="microposts">
+        <li>
+          <%= render @microposts %>
+        </li>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
 </div>
