@@ -22,7 +22,7 @@ describe Micropost do
      it { should_not be_valid }
    end
    describe "with blank content" do
-     before { @micropost.content = " " }
+     before { @micropost.content = "" }
      it { should_not be_vaild }
    end
    describe "with content to long" do
