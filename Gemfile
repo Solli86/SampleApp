@@ -11,9 +11,10 @@ group :development, :test do
   gem 'rspec'
   gem 'guard'
   gem 'guard-rspec'
-  gem 'guard-livereload', '~> 2.4', require: false
-  gem "rack-livereload"
+  gem 'listen'
+  gem "rack-livereload"  
   gem 'rspec-rails'
+  gem 'guard-livereload'  
   gem 'rspec-its'
   gem 'childprocess'
   gem 'spring'
@@ -22,7 +23,7 @@ end
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver', '2.35.1'
-  gem 'libnotify', '0.8.0'
+  gem 'libnotify'
   gem 'factory_girl_rails'
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
