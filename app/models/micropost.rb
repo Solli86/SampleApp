@@ -3,4 +3,5 @@ class Micropost < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
   validates :content, presence: true, length: {in: 1..140 }
   validates :user_id, presence: true
+
 end
