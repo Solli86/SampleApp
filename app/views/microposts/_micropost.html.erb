@@ -5,4 +5,5 @@
   <span class="timestamp">
     <%= time_ago_in_words(micropost.created_at) %> ago.
   </span>
+  <%= render partial: "microposts/delete_link", :locals => { :item => micropost } %>
 </li>

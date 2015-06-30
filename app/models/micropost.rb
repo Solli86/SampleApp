@@ -4,4 +4,7 @@ class Micropost < ActiveRecord::Base
   validates :content, presence: true, length: {in: 1..140 }
   validates :user_id, presence: true
 
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
 end

@@ -22,7 +22,7 @@ describe "Static pages" do
       end
       it "should render users feed" do
         user.feed.each do |item|
-          expect(page).to have_selector("li##{item_id}", text: item.content)
+          expect(page).to have_selector("li##{item.id}", text: item.content)
         end
       end
     end
