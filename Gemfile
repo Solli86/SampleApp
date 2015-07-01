@@ -5,6 +5,7 @@ gem 'rails', '4.0.2'
 gem 'bcrypt-ruby'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'backup'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3', '1.3.8'
