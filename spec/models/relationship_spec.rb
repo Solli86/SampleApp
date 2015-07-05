@@ -1,5 +1,11 @@
-require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe Relationship, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Relationship do
+  let(:follower)     { FactoryGirl.create(:user) }
+  let(:followed)     { FactoryGirl.create(:user) }
+  let(:relationship) { follower.relationship.build(followed_id: followed.id) }
+
+  subject { relationship }
+
+  it { should be_valid }
 end
