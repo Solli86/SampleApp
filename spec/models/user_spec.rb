@@ -98,6 +98,7 @@ describe User do
  #microposts flow
   it { should respond_to(:microposts) }
   it { should respond_to(:feed) }
+   it { should respond_to(:relationship) }
 
   describe "micropost associations" do
     before { @user.save }
