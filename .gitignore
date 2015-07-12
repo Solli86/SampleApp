@@ -23,6 +23,8 @@ doc/
 *.copy
 
 *.pdf
+*.directory
+
 
 .project
 .DS_Store
