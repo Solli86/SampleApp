@@ -21,6 +21,9 @@ doc/
 *.swo
 *~
 *.copy
+
+*.pdf
+
 .project
 .DS_Store
 .idea
