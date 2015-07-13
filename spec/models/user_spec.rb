@@ -96,9 +96,30 @@ describe User do
    end
 
  #microposts flow
-  it { should respond_to(:microposts) }
-  it { should respond_to(:feed) }
-   it { should respond_to(:relationship) }
+  it { should respond_to(:microposts)   }
+  it { should respond_to(:feed)         }
+  it { should respond_to(:relationship) }
+  it { should respond_to(:following?)   }
+  it { should respond_to(:follow!)      }
+  it { should respond_to(:unfollow!)    }
+
+  describe "following" do
+    let(:other_user) { FactoryGirl.create(:user) }
+    before do
+      @user.save
+      @user.follow!(other_user)
+
+      it { should be_following(:other_user) }
+      its(:followed_users) { should include(other_user) }
+
+      describe "and unfollowing" do
+        before { @user.unfollow!(other_user) }
+
+        it { should_not be_following(other_user) }
+        its(:followed_user) { should_not include(other_user) }
+      end
+    end
+  end
 
   describe "micropost associations" do
     before { @user.save }
