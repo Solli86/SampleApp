@@ -95,10 +95,9 @@ describe User do
      it { should be_admin }
    end
 
- #microposts flow
+  #microposts flow
   it { should respond_to(:microposts)            }
   it { should respond_to(:feed)                  }
-  it { should respond_to(:relationship)          }
   it { should respond_to(:following?)            }
   it { should respond_to(:follow!)               }
   it { should respond_to(:unfollow!)             }
