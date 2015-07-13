@@ -38,13 +38,13 @@ class User < ActiveRecord::Base
     Micropost.where("user_id = ?", id)
   end
   def following?(other_user)
-    relationship.find_by(followed_id: other_user.id)
+    relationships.find_by(followed_id: other_user.id)
   end
   def follow!(other_user)
-    relationship.create!(followed_id: other_user.id)
+    relationships.create!(followed_id: other_user.id)
   end
   def unfollow!(other_user)
-    relationship.find_by(followed_id: other_user.id).destroy!
+    relationships.find_by(followed_id: other_user.id).destroy!
   end
   private
 
