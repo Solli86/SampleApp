@@ -2,13 +2,13 @@ require 'spec_helper'
 describe User do
   before  { @user = User.new( name: "Solli_86", email: "solli@mix.up", password: "foobar", password_confirmation: "foobar") }
   subject { @user }
-  it {       should   respond_to(:name)                  }
-  it {       should   respond_to(:email)                 }
-  it {       should   respond_to(:password_digest)       }
-  it {       should   respond_to(:password)              }
-  it {       should   respond_to(:remember_token)        }
-  it {       should   respond_to(:password_confirmation) }
-  it {       should   respond_to(:authenticate)          }
+  it { should respond_to(:name)                  }
+  it { should respond_to(:email)                 }
+  it { should respond_to(:password_digest)       }
+  it { should respond_to(:password)              }
+  it { should respond_to(:remember_token)        }
+  it { should respond_to(:password_confirmation) }
+  it { should respond_to(:authenticate)          }
   it {should be_valid }
   # name column spec
   describe "When name is not present" do
@@ -96,13 +96,16 @@ describe User do
    end
 
  #microposts flow
-  it { should respond_to(:microposts)   }
-  it { should respond_to(:feed)         }
-  it { should respond_to(:relationship) }
-  it { should respond_to(:following?)   }
-  it { should respond_to(:follow!)      }
-  it { should respond_to(:unfollow!)    }
-
+  it { should respond_to(:microposts)            }
+  it { should respond_to(:feed)                  }
+  it { should respond_to(:relationship)          }
+  it { should respond_to(:following?)            }
+  it { should respond_to(:follow!)               }
+  it { should respond_to(:unfollow!)             }
+  it { should respond_to(:relationships)         }
+  it { should respond_to(:followed_users)        }
+  it { should respond_to(:reverse_relationships) }
+  it { should respond_to(:followers)             }
   describe "following" do
     let(:other_user) { FactoryGirl.create(:user) }
     before do
@@ -111,6 +114,11 @@ describe User do
 
       it { should be_following(:other_user) }
       its(:followed_users) { should include(other_user) }
+      
+      describe "followed user" do
+        subject { other_user }
+        its(:followers) { should include(@user) }
+      end
 
       describe "and unfollowing" do
         before { @user.unfollow!(other_user) }
@@ -120,6 +128,7 @@ describe User do
       end
     end
   end
+  
 
   describe "micropost associations" do
     before { @user.save }
