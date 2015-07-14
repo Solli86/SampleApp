@@ -11,11 +11,11 @@ group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec'
   gem 'guard'
-  gem 'guard-rspec'
   gem 'listen'
   gem "rack-livereload"  
   gem 'rspec-rails'
   gem 'guard-livereload'  
+  gem 'rb-fsevent',  :require => false
   gem 'rspec-its'
   gem 'childprocess'
   gem 'spring'
